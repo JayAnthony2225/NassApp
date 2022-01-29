@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5609055627A4F87200E4B7D4 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609055527A4F87200E4B7D4 /* WeatherManager.swift */; };
+		5609055827A4F89600E4B7D4 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609055727A4F89600E4B7D4 /* WeatherData.swift */; };
 		D6484F3E27A247E4003293F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6484F3D27A247E4003293F1 /* AppDelegate.swift */; };
 		D6484F4027A247E4003293F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6484F3F27A247E4003293F1 /* SceneDelegate.swift */; };
 		D6484F4227A247E4003293F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6484F4127A247E4003293F1 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5609055527A4F87200E4B7D4 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		5609055727A4F89600E4B7D4 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		D6484F3A27A247E4003293F1 /* Nassap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nassap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6484F3D27A247E4003293F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6484F3F27A247E4003293F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				D6484F4627A247E6003293F1 /* Assets.xcassets */,
 				D6484F4827A247E6003293F1 /* LaunchScreen.storyboard */,
 				D6484F4B27A247E6003293F1 /* Info.plist */,
+				5609055527A4F87200E4B7D4 /* WeatherManager.swift */,
+				5609055727A4F89600E4B7D4 /* WeatherData.swift */,
 			);
 			path = Nassap;
 			sourceTree = "<group>";
@@ -144,7 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5609055627A4F87200E4B7D4 /* WeatherManager.swift in Sources */,
 				D6484F7627A39ED7003293F1 /* fotoDelDia.swift in Sources */,
+				5609055827A4F89600E4B7D4 /* WeatherData.swift in Sources */,
 				D6484F4227A247E4003293F1 /* ViewController.swift in Sources */,
 				D6484F3E27A247E4003293F1 /* AppDelegate.swift in Sources */,
 				D6484F5227A24DB4003293F1 /* planetasViewController.swift in Sources */,

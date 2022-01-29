@@ -7,21 +7,25 @@
 
 import UIKit
 
-class planetasViewController: UIViewController {
+class planetasViewController: UIViewController, UITextFieldDelegate {
     
     var hola : UILabel?
     
     var width = UIScreen.main.bounds.width
     var height = UIScreen.main.bounds.height
+    var SearchTextField: UITextField!
+    
+    var weatherManager =  WeatherManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
     
     
-    view.backgroundColor = .black
+        view.backgroundColor = .white
     initUI()
+        
+    SearchTextField.delegate = self
 
 
 }
@@ -37,6 +41,30 @@ class planetasViewController: UIViewController {
     hola?.text = " ¡Hola de nuevo ! "
     view.addSubview(hola!)
     
-    
+    SearchTextField = UITextField(frame: CGRect(x: 70, y: 350, width: width - 150 , height: 40))
+        SearchTextField?.placeholder = "fecha %YYYY-%MM-%DD"
+        SearchTextField?.backgroundColor = .white
+        SearchTextField?.layer.cornerRadius = 7
+        SearchTextField?.layer.borderColor = UIColor.black.cgColor
+        SearchTextField?.layer.borderWidth = 1
+        view.addSubview(SearchTextField!)
 }
+    
+    @IBAction func SearchPressed(_ sender: UIButton) {
+        SearchTextField.endEditing(true)
+        print(SearchTextField.text!)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        SearchTextField.endEditing(true)
+        print(SearchTextField.text!)
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if let city = SearchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
+        SearchTextField.text = ""
+    }
 }
