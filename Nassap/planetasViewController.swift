@@ -15,14 +15,14 @@ class planetasViewController: UIViewController, UITextFieldDelegate {
     var height = UIScreen.main.bounds.height
     var SearchTextField: UITextField!
     
-    var weatherManager =  WeatherManager()
+    var photoManager = PhotoManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     
     
-        view.backgroundColor = .white
+    view.backgroundColor = .white
     initUI()
         
     SearchTextField.delegate = self
@@ -41,8 +41,9 @@ class planetasViewController: UIViewController, UITextFieldDelegate {
     hola?.text = " ¡Hola de nuevo ! "
     view.addSubview(hola!)
     
-    SearchTextField = UITextField(frame: CGRect(x: 70, y: 350, width: width - 150 , height: 40))
-        SearchTextField?.placeholder = "fecha %YYYY-%MM-%DD"
+    SearchTextField = UITextField(frame: CGRect(x: 40, y: 350, width: width - 120 , height: 40))
+        SearchTextField?.placeholder = "YYYY-MM-DD"
+        SearchTextField?.textAlignment = .center
         SearchTextField?.backgroundColor = .white
         SearchTextField?.layer.cornerRadius = 7
         SearchTextField?.layer.borderColor = UIColor.black.cgColor
@@ -62,8 +63,8 @@ class planetasViewController: UIViewController, UITextFieldDelegate {
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if let city = SearchTextField.text {
-            weatherManager.fetchWeather(cityName: city)
+        if let day = SearchTextField.text {
+            photoManager.fetchPhoto(dateDay: day)
         }
         SearchTextField.text = ""
     }

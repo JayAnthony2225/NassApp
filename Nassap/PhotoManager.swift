@@ -6,16 +6,13 @@
 //
 
 import Foundation
-struct WeatherManager {
-    let climaUrl = "https://api.nasa.gov/planetary/apod?api_key=vSzasUGIBx0Y5AkvqtGmhvsdmqMfLnUeLjHMSf5u"
+struct PhotoManager {
+    let NASAUrl = "https://api.nasa.gov/planetary/apod?api_key=vSzasUGIBx0Y5AkvqtGmhvsdmqMfLnUeLjHMSf5u"
     
-    func fetchWeather(cityName: String) {
-        let urlString = "\(climaUrl)&date=\(cityName)"
+    func fetchPhoto(dateDay: String) {
+        let urlString = "\(NASAUrl)&date=\(dateDay)"
        perfomRequest(urlString: urlString)
     }
-    
-    
-    
     
     func perfomRequest(urlString: String) {
         // Hacemos los 4 pasos
@@ -33,7 +30,7 @@ struct WeatherManager {
                     return
                 }
                 if let safeData = data {
-                    self.parseJSON(weatherData: safeData)
+                    self.parseJSON(photoDayData: safeData)
                   
                 }
                 
@@ -43,13 +40,14 @@ struct WeatherManager {
         }
     }
     
-    func parseJSON(weatherData: Data) {
+    func parseJSON(photoDayData: Data) {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            let decodedData = try decoder.decode(PhotoDayData.self, from: photoDayData)
             print(decodedData.explanation)
-            print(decodedData.date)
             print(decodedData.title)
+            print(decodedData.date)
+            print(decodedData.url)
             
             
         } catch {
