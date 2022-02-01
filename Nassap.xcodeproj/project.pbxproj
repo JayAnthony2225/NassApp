@@ -43,6 +43,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		562B5AC827A8AF9A0025C41A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5609055727A4F89600E4B7D4 /* PhotoDayData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		562B5AC927A8AFA70025C41A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6484F5127A24DB4003293F1 /* planetasViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		562B5ACA27A8AFC80025C41A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5609055527A4F87200E4B7D4 /* PhotoManager.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D6484F3127A247E4003293F1 = {
 			isa = PBXGroup;
 			children = (
@@ -64,14 +88,14 @@
 			children = (
 				D6484F3D27A247E4003293F1 /* AppDelegate.swift */,
 				D6484F3F27A247E4003293F1 /* SceneDelegate.swift */,
-				D6484F4127A247E4003293F1 /* ViewController.swift */,
-				D6484F5127A24DB4003293F1 /* planetasViewController.swift */,
 				D6484F4327A247E4003293F1 /* Main.storyboard */,
 				D6484F4627A247E6003293F1 /* Assets.xcassets */,
 				D6484F4827A247E6003293F1 /* LaunchScreen.storyboard */,
 				D6484F4B27A247E6003293F1 /* Info.plist */,
-				5609055527A4F87200E4B7D4 /* PhotoManager.swift */,
-				5609055727A4F89600E4B7D4 /* PhotoDayData.swift */,
+				D6484F4127A247E4003293F1 /* ViewController.swift */,
+				562B5ACA27A8AFC80025C41A /* View */,
+				562B5AC927A8AFA70025C41A /* Controller */,
+				562B5AC827A8AF9A0025C41A /* Model */,
 			);
 			path = Nassap;
 			sourceTree = "<group>";
