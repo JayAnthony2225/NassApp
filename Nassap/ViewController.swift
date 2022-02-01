@@ -79,6 +79,8 @@ class ViewController: UIViewController {
     
     
     
+    // funcion para ir al Planetas View 
+    
 @objc func goToPlaneta()
         {
             print("presentando otro View")

@@ -6,8 +6,17 @@
 //
 
 import Foundation
+
+protocol PhotoDayManagerDelegate {
+    func didUpdatePhotoDay(_ photoManager: PhotoManager, photoDay: PhotoDayModel)
+}
+
 struct PhotoManager {
-    let NASAUrl = "https://api.nasa.gov/planetary/apod?api_key=vSzasUGIBx0Y5AkvqtGmhvsdmqMfLnUeLjHMSf5u"
+      let NASAUrl = "https://api.nasa.gov/planetary/apod?api_key=vSzasUGIBx0Y5AkvqtGmhvsdmqMfLnUeLjHMSf5u"
+   // let NASAUrl = "https://api.nasa.gov/planetary/apod?"
+  //  let nasaKey = "api_key=vSzasUGIBx0Y5AkvqtGmhvsdmqMfLnUeLjHMSf5u"
+    
+    var delegate: PhotoDayManagerDelegate?
     
     func fetchPhoto(dateDay: String) {
         let urlString = "\(NASAUrl)&date=\(dateDay)"
@@ -30,31 +39,42 @@ struct PhotoManager {
                     return
                 }
                 if let safeData = data {
-                    self.parseJSON(photoDayData: safeData)
-                  
+                    if  let photoDay = self.parseJSON(photoDayData: safeData) {
+                        delegate?.didUpdatePhotoDay(self, photoDay: photoDay)
+                    }
                 }
-                
             }
             //4. empezar la tarea
             task.resume()
         }
     }
     
-    func parseJSON(photoDayData: Data) {
+    
+    
+    func parseJSON(photoDayData: Data) -> PhotoDayModel? {
         let decoder = JSONDecoder()
         do {
+            
             let decodedData = try decoder.decode(PhotoDayData.self, from: photoDayData)
-            print(decodedData.explanation)
-            print(decodedData.title)
+            
+        
+            let tittleApi = decodedData.title
+            let dateApi = decodedData.date
+            let urlApi = decodedData.url
+            let photoDay = PhotoDayModel(date: dateApi, title: tittleApi, url: urlApi)
+            return photoDay
+            
+            
+           // print(decodedData.explanation)
+            print(tittleApi)
             print(decodedData.date)
             print(decodedData.url)
             
             
         } catch {
             print(error)
+            return nil
         }
     }
    
-  
-    
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct PhotoDayData: Decodable {
 
-    let explanation: String
+    //let explanation: String
     let date: String
     let title: String
     let url: String
