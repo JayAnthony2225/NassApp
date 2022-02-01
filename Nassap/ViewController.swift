@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     var boton : UIButton?
     var etiqueta : UILabel?
     var etiquetaTitulo : UILabel?
+    var rocketButton: UIButton?
+    var planetImage : UIImageView?
     
     var width = UIScreen.main.bounds.width
     var height = UIScreen.main.bounds.height
@@ -44,36 +46,38 @@ class ViewController: UIViewController {
         imagen?.layer.cornerRadius = 15
         view.addSubview(imagen!)
         
-        etiquetaTitulo = UILabel(frame: CGRect(x: 50, y: 200, width: width/2, height: height/4))
+        etiquetaTitulo = UILabel(frame: CGRect(x: 50, y: 160, width: width - 100, height: height/4))
         etiquetaTitulo?.textColor = whiteTextColor
         etiquetaTitulo?.backgroundColor = .clear
-        etiquetaTitulo?.text = "NASAP."
-        etiquetaTitulo?.textAlignment = .left
+        etiquetaTitulo?.text = "NASAPP"
+        etiquetaTitulo?.textAlignment = .center
         etiquetaTitulo?.font = UIFont(name: "Helvetica Bold", size: 32)
         etiquetaTitulo?.adjustsFontSizeToFitWidth = true
         etiquetaTitulo?.numberOfLines = 0
         view.addSubview(etiquetaTitulo!)
         
-        etiqueta = UILabel(frame: CGRect(x: 70, y: 440, width: width - 150 , height: 40))
+        etiqueta = UILabel(frame: CGRect(x: 70, y: 450, width: width - 150 , height: 120))
         etiqueta?.textAlignment = NSTextAlignment.center
         etiqueta?.backgroundColor = .clear
         etiqueta?.textColor = lightBTextColor
-        etiqueta?.font = UIFont(name: "Arial Bold", size: 28)
-        //bienvenidoLabel?.layer.cornerRadius = 10
-        //bienvenidoLabel?.layer.borderColor = UIColor.black.cgColor
-        //bienvenidoLabel?.layer.borderWidth = 3
-        etiqueta?.text = " ¡Bienvenido! "
+        etiqueta?.numberOfLines = 0
+        etiqueta?.font = UIFont(name: "Arial Bold", size: 32)
+        etiqueta?.text = " Quieres ver algo increible del universo!!!"
         view.addSubview(etiqueta!)
         
-        //--------------- Registrate    ---------------
-        boton = UIButton(frame: CGRect(x: 60, y: 750, width: width - 120, height: 40))
+
+        boton = UIButton(frame: CGRect(x: 60, y: height - 100, width: width - 120, height: 40))
         boton?.backgroundColor = .clear
         boton?.layer.cornerRadius = 15
-        boton?.setTitle("Vamos chicos! ", for: .normal)
+        boton?.setTitle("Iniciar", for: .normal)
         boton?.addTarget(self, action: #selector(goToPlaneta), for: .touchUpInside)
        // registrateButton?.layer.backgroundColor = UIColor.systemBlue.cgColor
         view.addSubview(boton!)
         
+        rocketButton = UIButton(frame: CGRect(x: width - 140, y: height - 105, width: 45, height: 45))
+        rocketButton?.setImage(UIImage(named: "Rocket"), for: .normal)
+        rocketButton?.addTarget(self, action: #selector(goToPlaneta), for: .touchUpInside)
+        view.addSubview(rocketButton!)
     }
     
     

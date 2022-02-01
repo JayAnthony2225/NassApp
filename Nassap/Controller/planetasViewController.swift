@@ -54,24 +54,25 @@ class planetasViewController: UIViewController, UITextFieldDelegate, PhotoDayMan
         SearchTextField?.layer.borderWidth = 1
         view.addSubview(SearchTextField!)
         
-        date = UILabel(frame: CGRect(x: 70, y: 540, width: width - 150 , height: 40))
+        date = UILabel(frame: CGRect(x: 70, y: 670, width: width - 150 , height: 40))
         date?.textAlignment = NSTextAlignment.center
         date?.backgroundColor = .clear
         date?.textColor = .white
-        date?.font = UIFont(name: "Arial Bold", size: 18)
+        date?.font = UIFont(name: "Arial Bold", size: 20)
         date?.text = ""
         view.addSubview(date!)
         
-        title1 = UILabel(frame: CGRect(x: 70, y: 440, width: width - 150 , height: 40))
+        title1 = UILabel(frame: CGRect(x: 40, y: 610, width: width - 80 , height: 60))
         title1?.textAlignment = NSTextAlignment.center
         title1?.backgroundColor = .clear
         title1?.textColor = .white
+        title1?.numberOfLines = 0
         title1?.font = UIFont(name: "Arial Bold", size: 18)
         title1?.text = ""
         view.addSubview(title1!)
         
         
-        image1 = UIImageView (frame: CGRect(x: 0, y: 200, width: width , height: 200))
+        image1 = UIImageView (frame: CGRect(x: 0, y: 190, width: width , height: height/2))
         //image1?.image = UIImage(named: "")
         image1?.contentMode = .scaleAspectFit
         view.addSubview(image1!)
