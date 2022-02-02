@@ -8,12 +8,15 @@
 import Foundation
 
 protocol PhotoDayManagerDelegate {
+    //funcion actualizacion de photo del dia 
     func didUpdatePhotoDay(_ photoManager: PhotoManager, photoDay: PhotoDayModel)
 }
 
 struct PhotoManager {
+    // variable de Url - Api de la Nasa
       let NASAUrl = "https://api.nasa.gov/planetary/apod?api_key=vSzasUGIBx0Y5AkvqtGmhvsdmqMfLnUeLjHMSf5u"
-   // let NASAUrl = "https://api.nasa.gov/planetary/apod?"
+ 
+    // let NASAUrl = "https://api.nasa.gov/planetary/apod?"
   //  let nasaKey = "api_key=vSzasUGIBx0Y5AkvqtGmhvsdmqMfLnUeLjHMSf5u"
     
     var delegate: PhotoDayManagerDelegate?

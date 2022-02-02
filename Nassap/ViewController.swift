@@ -57,19 +57,19 @@ class ViewController: UIViewController {
         view.addSubview(etiquetaTitulo!)
         
         etiqueta = UILabel(frame: CGRect(x: 70, y: 450, width: width - 150 , height: 120))
-        etiqueta?.textAlignment = NSTextAlignment.center
+        etiqueta?.textAlignment = NSTextAlignment.left
         etiqueta?.backgroundColor = .clear
         etiqueta?.textColor = lightBTextColor
         etiqueta?.numberOfLines = 0
-        etiqueta?.font = UIFont(name: "Arial Bold", size: 32)
-        etiqueta?.text = " Quieres ver algo increible del universo!!!"
+        etiqueta?.font = UIFont(name: "Arial Bold", size: 26)
+        etiqueta?.text = "Quieres ver algo fuera de este mundo?"
         view.addSubview(etiqueta!)
         
 
         boton = UIButton(frame: CGRect(x: 60, y: height - 100, width: width - 120, height: 40))
         boton?.backgroundColor = .clear
         boton?.layer.cornerRadius = 15
-        boton?.setTitle("Iniciar", for: .normal)
+        boton?.setTitle("Si, vamos! ", for: .normal)
         boton?.addTarget(self, action: #selector(goToPlaneta), for: .touchUpInside)
        // registrateButton?.layer.backgroundColor = UIColor.systemBlue.cgColor
         view.addSubview(boton!)
